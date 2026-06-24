@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Flashcards: Fotosyntese og celleånding</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #d9f2e6, #b7d4f0);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background: rgba(0, 60, 90, 0.85);
+            color: white;
+            width: 100%;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(4px);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        main {
+            max-width: 1100px;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .flashcard {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+            position: relative;
+            min-height: 160px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+        }
+
+        .question, .answer {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .answer {
+            display: none;
+            color: #0a4f3c;
+            font-weight: 600;
+        }
+
+        .flashcard.flipped .question {
+            display: none;
+        }
+
+        .flashcard.flipped .answer {
+            display: block;
+        }
+
+        .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Flashcards: Fotosyntese og celleånding</h1>
+    <p>Klikk på kortene for å se svar</p>
+</header>
+
+<main>
+    <section class="flashcard-container">
+
+        <!-- Kort 1 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hva er formålet med fotosyntese?</div>
+            <div class="answer">Å lage glukose (energi) ved hjelp av sollys, CO₂ og vann.</div>
+        </div>
+
+        <!-- Kort 2 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hva er formålet med celleånding?</div>
+            <div class="answer">Å frigjøre energi fra glukose ved hjelp av oksygen.</div>
+        </div>
+
+        <!-- Kort 3 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hva produserer fotosyntesen som celleåndingen trenger?</div>
+            <div class="answer">Glukose og oksygen.</div>
+        </div>
+
+        <!-- Kort 4 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hva produserer celleåndingen som fotosyntesen trenger?</div>
+            <div class="answer">CO₂ og vann.</div>
+        </div>
+
+        <!-- Kort 5 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hvor skjer fotosyntesen?</div>
+            <div class="answer">I kloroplastene i planteceller.</div>
+        </div>
+
+        <!-- Kort 6 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hvor skjer celleånding?</div>
+            <div class="answer">I mitokondriene i både plante- og dyreceller.</div>
+        </div>
+
+        <!-- Kort 7 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hva er den kjemiske reaksjonen for fotosyntese?</div>
+            <div class="answer">CO₂ + vann + solenergi → glukose + oksygen.</div>
+        </div>
+
+        <!-- Kort 8 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hva er den kjemiske reaksjonen for celleånding?</div>
+            <div class="answer">Glukose + oksygen → CO₂ + vann + energi.</div>
+        </div>
+
+        <!-- Kort 9 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hvorfor er fotosyntese og celleånding motsatte prosesser?</div>
+            <div class="answer">Produktene fra den ene er råstoffene for den andre.</div>
+        </div>
+
+        <!-- Kort 10 -->
+        <div class="flashcard">
+            <div class="label">Spørsmål</div>
+            <div class="question">Hvilken prosess lager energi, og hvilken lagrer energi?</div>
+            <div class="answer">Fotosyntese lagrer energi i glukose. Celleånding frigjør energi.</div>
+        </div>
+
+    </section>
+</main>
+
+<script>
+    document.querySelectorAll('.flashcard').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+    });
+</script>
+</body>
+</html>
+
